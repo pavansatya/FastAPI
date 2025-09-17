@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DatabaseQuery"]
+
+ref table olist_customers_dataset
+ref table olist_geolocation_dataset
+ref table olist_order_items_dataset
+ref table olist_order_reviews_dataset
+ref table olist_order_payments_dataset
+ref table olist_products_dataset
+ref table olist_orders_dataset
+ref table product_category_name_translation
+ref table olist_sellers_dataset
+

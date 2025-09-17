@@ -1,0 +1,54 @@
+table olist_sellers_dataset
+	lineageTag: a4c1ece3-13cf-48b3-9b8a-d42abe62ae08
+	sourceLineageTag: [dbo].[olist_sellers_dataset]
+
+	column seller_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f918f5bf-cc43-464f-b39f-c16b3e14bf54
+		sourceLineageTag: seller_id
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_zip_code_prefix
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4b7b9953-d544-40fd-9c39-69492757a196
+		sourceLineageTag: seller_zip_code_prefix
+		summarizeBy: sum
+		sourceColumn: seller_zip_code_prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_city
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1f225db1-7d04-4494-afec-78a344901b5b
+		sourceLineageTag: seller_city
+		summarizeBy: none
+		sourceColumn: seller_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_state
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 086744dc-94ce-4411-b022-399f419ebe81
+		sourceLineageTag: seller_state
+		summarizeBy: none
+		sourceColumn: seller_state
+
+		annotation SummarizationSetBy = Automatic
+
+	partition olist_sellers_dataset = entity
+		mode: directLake
+		source
+			entityName: olist_sellers_dataset
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

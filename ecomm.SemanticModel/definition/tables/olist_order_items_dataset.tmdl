@@ -1,0 +1,89 @@
+table olist_order_items_dataset
+	lineageTag: 362ea83a-6dfd-4cca-8ef6-66b610b22752
+	sourceLineageTag: [dbo].[olist_order_items_dataset]
+
+	column order_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d1b608fc-5798-4859-a040-ffd04c3809ad
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e0ae43c0-3b5a-423a-9c40-64d804f851dc
+		sourceLineageTag: order_item_id
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d70d81b6-d7a7-4132-8336-d257670bc2c1
+		sourceLineageTag: product_id
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c12de0b7-2b2e-4319-ae16-28862f4a5ec6
+		sourceLineageTag: seller_id
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_limit_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c7e26442-396a-421a-b3d8-b1b621b09a55
+		sourceLineageTag: shipping_limit_date
+		summarizeBy: none
+		sourceColumn: shipping_limit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e8f20c60-394c-4d77-ab13-7284d22bebd9
+		sourceLineageTag: price
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1effd49c-1190-4b83-a296-7d2f94477721
+		sourceLineageTag: freight_value
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition olist_order_items_dataset = entity
+		mode: directLake
+		source
+			entityName: olist_order_items_dataset
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

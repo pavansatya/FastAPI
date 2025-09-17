@@ -1,0 +1,67 @@
+table olist_order_payments_dataset
+	lineageTag: 2db98076-523b-4fef-9c58-7ffd9d4f3c2e
+	sourceLineageTag: [dbo].[olist_order_payments_dataset]
+
+	column order_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: daee6d40-d5a5-4929-9028-a8e4ae9a87d1
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_sequential
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: aaf8c730-4784-44cb-bfaa-17107ead8dc7
+		sourceLineageTag: payment_sequential
+		summarizeBy: sum
+		sourceColumn: payment_sequential
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_type
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5c8d5e90-9588-4290-897b-7de8efac846c
+		sourceLineageTag: payment_type
+		summarizeBy: none
+		sourceColumn: payment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_installments
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ae19ffa4-070f-49f8-a011-d6b92981647f
+		sourceLineageTag: payment_installments
+		summarizeBy: sum
+		sourceColumn: payment_installments
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_value
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 479ec109-b01f-46b8-b971-1fd1d25107ad
+		sourceLineageTag: payment_value
+		summarizeBy: sum
+		sourceColumn: payment_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition olist_order_payments_dataset = entity
+		mode: directLake
+		source
+			entityName: olist_order_payments_dataset
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

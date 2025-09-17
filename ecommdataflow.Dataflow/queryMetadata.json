@@ -1,0 +1,52 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "ecommdataflow",
+  "queryGroups": [],
+  "documentLocale": "en-IN",
+  "queriesMetadata": {
+    "olist_customers_dataset csv": {
+      "queryId": "bd19ca01-74a9-436f-80f6-b7b221c7de5f",
+      "queryName": "olist_customers_dataset csv"
+    },
+    "olist_geolocation_dataset csv": {
+      "queryId": "35ff05cc-c0f2-4f2f-a739-7c1fd068dfb9",
+      "queryName": "olist_geolocation_dataset csv"
+    },
+    "olist_order_items_dataset csv": {
+      "queryId": "615fa80c-74d3-4b1b-9cc8-c5f7ecd68cfd",
+      "queryName": "olist_order_items_dataset csv"
+    },
+    "olist_order_payments_dataset csv": {
+      "queryId": "656d933e-58ed-4c44-89a9-d7c5fcbf7f7b",
+      "queryName": "olist_order_payments_dataset csv"
+    },
+    "olist_order_reviews_dataset csv": {
+      "queryId": "128a36fa-c2c8-46d6-b2d6-a3cb45ee1440",
+      "queryName": "olist_order_reviews_dataset csv"
+    },
+    "olist_orders_dataset csv": {
+      "queryId": "e4a42e14-a5c7-4678-a91e-57489651e2a8",
+      "queryName": "olist_orders_dataset csv"
+    },
+    "olist_products_dataset csv": {
+      "queryId": "6db5b09c-c06f-4e7c-bcc3-6049d4fb2a39",
+      "queryName": "olist_products_dataset csv"
+    },
+    "olist_sellers_dataset csv": {
+      "queryId": "dcc3f215-a559-43e8-8b60-1c21a2518c6e",
+      "queryName": "olist_sellers_dataset csv"
+    },
+    "product_category_name_translation csv": {
+      "queryId": "ccca60d1-2581-4252-87e6-0b49f41d7c8c",
+      "queryName": "product_category_name_translation csv"
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"b308d73c-bac7-4240-942d-f2f036ce594e\",\"DatasourceId\":\"d4c1ca27-bc1c-4158-b9c3-cfbc112f879d\"}"
+    }
+  ]
+}

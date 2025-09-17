@@ -1,0 +1,83 @@
+table olist_order_reviews_dataset
+	lineageTag: f3c454db-0d11-4269-8276-2bfde54c7117
+	sourceLineageTag: [dbo].[olist_order_reviews_dataset]
+
+	column review_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9b88cee2-a24b-4978-9146-57af28a62101
+		sourceLineageTag: review_id
+		summarizeBy: none
+		sourceColumn: review_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0ef61a98-5447-4942-b2a1-6a0abc795f52
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_score
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 16c24a1b-ed87-46db-8a37-ea8406478d8e
+		sourceLineageTag: review_score
+		summarizeBy: none
+		sourceColumn: review_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_comment_title
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 97166444-2ee2-46eb-aae8-7b065007b6b9
+		sourceLineageTag: review_comment_title
+		summarizeBy: none
+		sourceColumn: review_comment_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_comment_message
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ab20d81f-e729-4883-91d3-413ce23abc4f
+		sourceLineageTag: review_comment_message
+		summarizeBy: none
+		sourceColumn: review_comment_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_creation_date
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e7563eb2-d684-4ce0-a58e-582bbe997d78
+		sourceLineageTag: review_creation_date
+		summarizeBy: none
+		sourceColumn: review_creation_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_answer_timestamp
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f4788845-97d4-4669-ba21-39d2cd31ac80
+		sourceLineageTag: review_answer_timestamp
+		summarizeBy: none
+		sourceColumn: review_answer_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition olist_order_reviews_dataset = entity
+		mode: directLake
+		source
+			entityName: olist_order_reviews_dataset
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

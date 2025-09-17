@@ -1,0 +1,33 @@
+table product_category_name_translation
+	lineageTag: 99557824-6390-4e8d-8d64-231bd9fb9f06
+	sourceLineageTag: [dbo].[product_category_name_translation]
+
+	column product_category_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: da05626f-2072-4ad4-9406-b531f313d225
+		sourceLineageTag: product_category_name
+		summarizeBy: none
+		sourceColumn: product_category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category_name_english
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 49971652-a44d-43e8-9515-02d66749e730
+		sourceLineageTag: product_category_name_english
+		summarizeBy: none
+		sourceColumn: product_category_name_english
+
+		annotation SummarizationSetBy = Automatic
+
+	partition product_category_name_translation = entity
+		mode: directLake
+		source
+			entityName: product_category_name_translation
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

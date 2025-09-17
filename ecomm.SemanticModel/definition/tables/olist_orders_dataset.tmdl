@@ -1,0 +1,98 @@
+table olist_orders_dataset
+	lineageTag: 047ad429-0d68-42c6-8ecd-bb7658b55321
+	sourceLineageTag: [dbo].[olist_orders_dataset]
+
+	column order_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 57614c89-b806-43d8-bce0-fb1ec4e3d378
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d9c987df-abe2-4a56-b9aa-23a0894bd22e
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 29d8ecac-48be-444d-8659-edd2011051c1
+		sourceLineageTag: order_status
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 19bde584-18ee-4b65-b716-42218b0bcb9c
+		sourceLineageTag: order_purchase_timestamp
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_approved_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d5029bce-0dc3-4670-845e-f549b8adb87d
+		sourceLineageTag: order_approved_at
+		summarizeBy: none
+		sourceColumn: order_approved_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_carrier_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 42c7c561-d934-4af3-902b-2795bdf2af87
+		sourceLineageTag: order_delivered_carrier_date
+		summarizeBy: none
+		sourceColumn: order_delivered_carrier_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_customer_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b57254f7-178e-4593-b3f7-475741f96dbb
+		sourceLineageTag: order_delivered_customer_date
+		summarizeBy: none
+		sourceColumn: order_delivered_customer_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_estimated_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3d0dc536-e1d6-4be2-84fe-8bfb06b5bf85
+		sourceLineageTag: order_estimated_delivery_date
+		summarizeBy: none
+		sourceColumn: order_estimated_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition olist_orders_dataset = entity
+		mode: directLake
+		source
+			entityName: olist_orders_dataset
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
